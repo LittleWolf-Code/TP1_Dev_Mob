@@ -45,7 +45,8 @@ fun Inscription(navController: NavController){
                 .padding(innerPadding)
                 .fillMaxSize()
                 .padding(horizontal = 20.dp, vertical = 12.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
 
             Text(

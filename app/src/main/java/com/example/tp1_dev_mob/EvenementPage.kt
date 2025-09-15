@@ -41,6 +41,8 @@ import com.example.tp1_dev_mob.ui.theme.TP1_Dev_MobTheme
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 
+import coil.compose.rememberAsyncImagePainter
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EvenementPage(navController: NavController) {
@@ -59,7 +61,7 @@ fun EvenementPage(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.image_evenement),
+                painter = rememberAsyncImagePainter("https://isis.univ-jfc.fr/sites/isis.univ-jfc.fr/files/images-contenu/2019-01/6777168972_eb5eda1ae1_o%20%282%29_6.jpg"),
                 contentDescription = "Event Image",
                 modifier = Modifier
                     .fillMaxWidth()

@@ -40,15 +40,16 @@ import com.example.tp1_dev_mob.ui.theme.TP1_Dev_MobTheme
 
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.navigation3.runtime.entryProvider
 
 import coil.compose.rememberAsyncImagePainter
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun EvenementPage(navController: NavController) {
+fun EvenementPage(interrese : ()-> Unit , pas_interrese : ()-> Unit ) {
     Scaffold(
         topBar = {
-            MyTopAppBar(title = "Evènements", navController = navController)
+            MyTopAppBar(title = "Evènements")
         },
         containerColor = Color(0xFFFDFDFD)
     ) { paddingValues ->
@@ -87,14 +88,14 @@ fun EvenementPage(navController: NavController) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Button(
-                    onClick = { navController.navigate("inscription") },
+                    onClick = interrese ,
                     shape = RoundedCornerShape(20.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5C6BC0))
                 ) {
                     Text("Inscription", modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp))
                 }
                 OutlinedButton(
-                    onClick = { navController.navigate("desole") },
+                    onClick = pas_interrese,
                     shape = RoundedCornerShape(20.dp),
                     border = BorderStroke(1.dp, Color.Gray)
                 ) {
@@ -102,13 +103,5 @@ fun EvenementPage(navController: NavController) {
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun EvenementPagePreview() {
-    TP1_Dev_MobTheme {
-        EvenementPage(navController = rememberNavController())
     }
 }

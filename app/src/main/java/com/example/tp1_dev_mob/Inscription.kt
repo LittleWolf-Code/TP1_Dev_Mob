@@ -29,10 +29,11 @@ import androidx.compose.foundation.verticalScroll
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.widthIn
+import androidx.navigation3.runtime.rememberNavBackStack
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Inscription(navController: NavController) {
+fun Inscription() {
     var nom by remember { mutableStateOf("") }
     var prenom by remember { mutableStateOf("") }
     var age by remember { mutableStateOf("") }
@@ -41,7 +42,7 @@ fun Inscription(navController: NavController) {
 
     Scaffold(
         topBar = {
-            MyTopAppBar(title = "Inscription", navController = navController, canGoBack = true)
+            MyTopAppBar(title = "Inscription")
         }
     ) { paddingValues ->
         Box(
@@ -97,7 +98,7 @@ fun Inscription(navController: NavController) {
                     Text("Accepter")
                 }
                 Spacer(modifier = Modifier.height(8.dp))
-                Button(onClick = { navController.popBackStack() }) {
+                Button(onClick = {}) {
                     Text("Retour")
                 }
             }

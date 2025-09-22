@@ -16,21 +16,12 @@ import androidx.navigation.NavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MyTopAppBar(title: String, navController: NavController, canGoBack: Boolean = false) {
+fun MyTopAppBar(title: String) {
     TopAppBar(
         title = { Text(title) },
         navigationIcon = {
-            if (canGoBack) {
-                IconButton(onClick = { navController.popBackStack() }) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = "Back"
-                    )
-                }
-            } else {
                 IconButton(onClick = { /* Handle navigation icon click */ }) {
                     Icon(Icons.Filled.Menu, contentDescription = "Menu")
-                }
             }
         },
         actions = {

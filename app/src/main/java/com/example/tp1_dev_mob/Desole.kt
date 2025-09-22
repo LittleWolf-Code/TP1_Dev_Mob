@@ -37,7 +37,7 @@ import androidx.compose.foundation.layout.widthIn
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Desole(navController: NavController) {
+fun Desole() {
     var pourquoi by remember { mutableStateOf("") }
     var nom by remember { mutableStateOf("") }
     var prenom by remember { mutableStateOf("") }
@@ -47,7 +47,7 @@ fun Desole(navController: NavController) {
 
     Scaffold(
         topBar = {
-            MyTopAppBar(title = "Désolé", navController = navController, canGoBack = true)
+            MyTopAppBar(title = "Désolé")
         }
     ) { paddingValues ->
         Box(
@@ -122,7 +122,7 @@ fun Desole(navController: NavController) {
                     Text("Envoyer")
                 }
                 Spacer(modifier = Modifier.height(8.dp))
-                Button(onClick = { navController.popBackStack() }) {
+                Button(onClick = {}) {
                     Text("Retour")
                 }
             }
